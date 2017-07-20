@@ -6,11 +6,9 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="functions.js" ></script>
     <style type="text/css">
+    
         body {
             display:flex;
-        }
-        td {
-            width:100px;
         }
         #input {
             margin-left:auto;
@@ -65,27 +63,39 @@
         </div>
             <div id="Team_selection">
             <h3>Team</h3>
+            Name: <input type=text name=GuideName><br>
             P1 Leader Base #: <input type="number" name="p1_leader_base" size="4" min="0" max="9999" maxlength="4">
             P1 Leader Assist #: <input type="number" name="p1_leader_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            <div id=p1_leader_latent></div>
             P1 Sub1   Base #: <input type="number" name="p1_sub1_base" size="4" min="0" max="9999" maxlength="4">
             P1 Sub1   Assist #: <input type="number" name="p1_sub1_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            <div id=p1_sub1_latent></div>
             P1 Sub2   Base #: <input type="number" name="p1_sub2_base" size="4" min="0" max="9999" maxlength="4">
             P1 Sub2   Assist #: <input type="number" name="p1_sub2_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            <div id=p1_sub2_latent></div>
             P1 Sub3   Base #: <input type="number" name="p1_sub3_base" size="4" min="0" max="9999" maxlength="4">
             P1 Sub3   Assist #: <input type="number" name="p1_sub3_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            <div id=p1_sub3_latent></div>
             P1 Sub4   Base #: <input type="number" name="p1_sub4_base" size="4" min="0" max="9999" maxlength="4">
-            P1 Sub4   Assist #: <input type="number" name="p1_sub4_assist" size="4" min="0" max="9999" maxlength="4"><br><br>
+            P1 Sub4   Assist #: <input type="number" name="p1_sub4_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            <div id=p1_sub4_latent></div>
             P2 Leader Base #: <input type="number" name="p2_leader_base" size="4" min="0" max="9999" maxlength="4">
             P2 Leader Assist #: <input type="number" name="p2_leader_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            <div id=p2_leader_latent></div>
             P2 Sub1   Base #: <input type="number" name="p2_sub1_base" size="4" min="0" max="9999" maxlength="4">
             P2 Sub1   Assist #: <input type="number" name="p2_sub1_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            <div id=p2_sub1_latent></div>
             P2 Sub2   Base #: <input type="number" name="p2_sub2_base" size="4" min="0" max="9999" maxlength="4">
             P2 Sub2   Assist #: <input type="number" name="p2_sub2_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            <div id=p2_sub2_latent></div>
             P2 Sub3   Base #: <input type="number" name="p2_sub3_base" size="4" min="0" max="9999" maxlength="4">
             P2 Sub3   Assist #: <input type="number" name="p2_sub3_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            <div id=p2_sub3_latent></div>
             P2 Sub4   Base #: <input type="number" name="p2_sub4_base" size="4" min="0" max="9999" maxlength="4">
             P2 Sub4   Assist #: <input type="number" name="p2_sub4_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            <div id=p2_sub_latent></div>
         </div>
+        <a href="https://github.com/Digity101/Pad_Template">Github link</a>
 
     </div>
     
@@ -112,6 +122,7 @@
             ```<br>
         </div>
         <div id="fakeImage">
+            <h2 id=name></h2>
             <table>
                 <tr>
                     <td id="p1_leader_assist"></td>
@@ -121,27 +132,44 @@
                     <td id="p1_sub4_assist"></td>
                 </tr>
                 <tr>
+                    <td id="p1_leader_latents"></td>
+                    <td id="p1_sub1_latents"></td>
+                    <td id="p1_sub2_latents"></td>
+                    <td id="p1_sub3_latents"></td>
+                    <td id="p1_sub4_latents"></td>
+                </tr>
+                <tr>
                      <td id="p1_leader_base"></td>
                      <td id="p1_sub1_base"></td>
                      <td id="p1_sub2_base"></td>
                      <td id="p1_sub3_base"></td>
                      <td id="p1_sub4_base"></td>
-                     <td>A | P1</td>
+                     <td>P1</td>
                 </tr>
                 <tr>
-                    <td id="p2_leader_base"></td>
+                    <td>P2</td>
                     <td id="p2_sub1_base"></td>
                     <td id="p2_sub2_base"></td>
                     <td id="p2_sub3_base"></td>
                     <td id="p2_sub4_base"></td>
-                    <td>B | P2<td>
+                    <td id="p2_leader_base"></td>
                 </tr>
                 <tr>
-                    <td id="p2_leader_assist"></td>
+                    <td></td>
+                    <td id="p2_sub1_latents"></td>
+                    <td id="p2_sub2_latents"></td>
+                    <td id="p2_sub3_latents"></td>
+                    <td id="p2_sub4_latents"></td>
+                    <td id="p2_leader_latents"></td>
+
+                </tr>
+                <tr>
+                    <td></td>
                     <td id="p2_sub1_assist"></td>
                     <td id="p2_sub2_assist"></td>
                     <td id="p2_sub3_assist"></td>
                     <td id="p2_sub4_assist"></td>
+                    <td id="p2_leader_assist"></td>
                 </tr>
             </table>
         </div>
