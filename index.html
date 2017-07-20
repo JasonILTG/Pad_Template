@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Guide Template</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="functions.js" ></script>
+    <style type="text/css">
+        body {
+            display:flex;
+        }
+        td {
+            width:100px;
+        }
+        #input {
+            margin-left:auto;
+            margin-right:auto;
+            width:50%;
+        }
+        #output {
+            margin-right:auto;
+            width:50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="input">
+        <div id="template_stuff">
+            
+            <h3>Guide # (Optional Description) </h3>
+            Guide Number and description: <input type=text name=GuideDesc>
+            <div id="leads">
+                P1 Lead:
+                <input type=checkbox name=P1_lead checked value=:ACC:>ACC
+                <input type=checkbox name=P1_lead checked value=:GlavenusHunter:>GlavenusHunter
+                <input type=checkbox name=P1_lead checked value=:Keith:>Keith
+                <input type=checkbox name=P1_lead checked value=:Yamamoto:>Yamamoto
+                <br>                               
+                P2 Lead:                           
+                <input type=checkbox name=P2_lead checked value=:ACC:>ACC
+                <input type=checkbox name=P2_lead checked value=:GlavenusHunter:>GlavenusHunter
+                <input type=checkbox name=P2_lead checked value=:Keith:>Keith
+                <input type=checkbox name=P2_lead checked value=:Yamamoto:>Yamamoto
+            </div>
+            Do you need 100% SBR?<input type=checkbox name=sbr value=sbr>
+            <div id=preemptives>
+                Which floors has a preemptive strike? <br>
+                FL: <input type=number name=PreEmptive size="2" min="0" max="99"><br>
+            </div>
+            <h3>**Example Team**</h3>
+            P1 team + sb: <input type=text size=60 name=p1team placeholder="Lead(Inherit)/Sub(Inherit)/Sub(Inherit)/Sub(Inherit)/Sub(Inherit) - X SB"><br>
+            P2 team + sb: <input type=text size=60 name=p2team placeholder="Lead(Inherit)/Sub(Inherit)/Sub(Inherit)/Sub(Inherit)/Sub(Inherit) - X SB"><br>
+            <div id="notes">
+                <h3>Notes</h3>
+                Note min HP if relevant <br>
+                Note damage problems <br>
+                Note substitutions <br>
+                &#8226; <input type=text name=note><br>
+            </div>
+            <h3>Rundown</h3>
+            <div id="rundown_input">
+            <input type=text name=rundown value="F1: "><br>
+            </div>
+        </div>
+            <div id="Team_selection">
+            <h3>Team</h3>
+            P1 Leader Base #: <input type="number" name="p1_leader_base" size="4" min="0" max="9999" maxlength="4">
+            P1 Leader Assist #: <input type="number" name="p1_leader_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            P1 Sub1   Base #: <input type="number" name="p1_sub1_base" size="4" min="0" max="9999" maxlength="4">
+            P1 Sub1   Assist #: <input type="number" name="p1_sub1_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            P1 Sub2   Base #: <input type="number" name="p1_sub2_base" size="4" min="0" max="9999" maxlength="4">
+            P1 Sub2   Assist #: <input type="number" name="p1_sub2_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            P1 Sub3   Base #: <input type="number" name="p1_sub3_base" size="4" min="0" max="9999" maxlength="4">
+            P1 Sub3   Assist #: <input type="number" name="p1_sub3_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            P1 Sub4   Base #: <input type="number" name="p1_sub4_base" size="4" min="0" max="9999" maxlength="4">
+            P1 Sub4   Assist #: <input type="number" name="p1_sub4_assist" size="4" min="0" max="9999" maxlength="4"><br><br>
+            P2 Leader Base #: <input type="number" name="p2_leader_base" size="4" min="0" max="9999" maxlength="4">
+            P2 Leader Assist #: <input type="number" name="p2_leader_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            P2 Sub1   Base #: <input type="number" name="p2_sub1_base" size="4" min="0" max="9999" maxlength="4">
+            P2 Sub1   Assist #: <input type="number" name="p2_sub1_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            P2 Sub2   Base #: <input type="number" name="p2_sub2_base" size="4" min="0" max="9999" maxlength="4">
+            P2 Sub2   Assist #: <input type="number" name="p2_sub2_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            P2 Sub3   Base #: <input type="number" name="p2_sub3_base" size="4" min="0" max="9999" maxlength="4">
+            P2 Sub3   Assist #: <input type="number" name="p2_sub3_assist" size="4" min="0" max="9999" maxlength="4"><br>
+            P2 Sub4   Base #: <input type="number" name="p2_sub4_base" size="4" min="0" max="9999" maxlength="4">
+            P2 Sub4   Assist #: <input type="number" name="p2_sub4_assist" size="4" min="0" max="9999" maxlength="4"><br>
+        </div>
+
+    </div>
+    
+    <div id="output">
+        <div id="template">
+            <span id=title>**__Guide # (Optional Description):__**</span> <br>
+            P1 lead: <span id=P1_lead>:ACC: :GlavenusHunter: :Keith: :Yamamoto: :Ganesha:</span> <br>
+            P2 lead: <span id=P2_lead>:ACC: :GlavenusHunter: :Keith: :Yamamoto: :Ganesha:</span> <br>
+            <span id="sbr"></span>
+            <span id="zap"></span>
+            <br>
+            **Example Team**: <br>
+            ```<br>
+            P1: <span id=P1_team>Lead(Inherit)/Sub(Inherit)/Sub(Inherit)/Sub(Inherit)/Sub(Inherit) - X SB</span><br>
+            P2: <span id=P2_team>Lead(Inherit)/Sub(Inherit)/Sub(Inherit)/Sub(Inherit)/Sub(Inherit) - X SB</span><br>
+            ```<br>
+            <br>
+            **__Notes__**<br>
+           <span id=note></span>
+            <br>
+            **__Rundown:__**<br>
+            ```<br>
+            <span id="rundown"></span>
+            ```<br>
+        </div>
+        <div id="fakeImage">
+            <table>
+                <tr>
+                    <td id="p1_leader_assist"></td>
+                    <td id="p1_sub1_assist"></td>
+                    <td id="p1_sub2_assist"></td>
+                    <td id="p1_sub3_assist"></td>
+                    <td id="p1_sub4_assist"></td>
+                </tr>
+                <tr>
+                     <td id="p1_leader_base"></td>
+                     <td id="p1_sub1_base"></td>
+                     <td id="p1_sub2_base"></td>
+                     <td id="p1_sub3_base"></td>
+                     <td id="p1_sub4_base"></td>
+                     <td>A | P1</td>
+                </tr>
+                <tr>
+                    <td id="p2_leader_base"></td>
+                    <td id="p2_sub1_base"></td>
+                    <td id="p2_sub2_base"></td>
+                    <td id="p2_sub3_base"></td>
+                    <td id="p2_sub4_base"></td>
+                    <td>B | P2<td>
+                </tr>
+                <tr>
+                    <td id="p2_leader_assist"></td>
+                    <td id="p2_sub1_assist"></td>
+                    <td id="p2_sub2_assist"></td>
+                    <td id="p2_sub3_assist"></td>
+                    <td id="p2_sub4_assist"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+        
+
+
+</body>
+</html>
