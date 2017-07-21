@@ -32,17 +32,32 @@
             <h3>Guide # (Optional Description) </h3>
             Guide Number and description: <input type=text name=GuideDesc>
             <div id="leads">
+                Line 1 leads: which do you want?<br>
+                <input type=radio name=Line1_lead checked value="P1 lead">P1 lead
+                <input type=radio name=Line1_lead value="P1/P2 lead">P1/P2 lead
+                <input type=radio name=Line1_lead value="Both Leads">Both Leads
+                <input type=radio name=Line1_lead value="Other lead">Other lead
+                <br>
                 P1 Lead:
-                <input type=checkbox name=P1_lead checked value=:ACC:>ACC
-                <input type=checkbox name=P1_lead checked value=:GlavenusHunter:>GlavenusHunter
-                <input type=checkbox name=P1_lead checked value=:Keith:>Keith
                 <input type=checkbox name=P1_lead checked value=:Yamamoto:>Yamamoto
-                <br>                               
+                <input type=checkbox name=P1_lead checked value=:GlavenusHunter:>GlavenusHunter
+                <input type=checkbox name=P1_lead checked value=:ACC:>ACC
+                <input type=checkbox name=P1_lead checked value=:Keith:>Keith
+                <input type=checkbox name=P1_lead checked value=:Ganesha:>Ganesha
+                
+                <br><br>
+                Line 2 leads: which do you want?<br>
+                <input type=radio name=Line2_lead checked value="P2 lead">P2 lead
+                <input type=radio name=Line2_lead value="P1/P2 lead">P1/P2 lead
+                <input type=radio name=Line2_lead value="Both Leads">Both Leads
+                <input type=radio name=Line2_lead value="Other lead">Other lead
+                <br>
                 P2 Lead:                           
-                <input type=checkbox name=P2_lead checked value=:ACC:>ACC
-                <input type=checkbox name=P2_lead checked value=:GlavenusHunter:>GlavenusHunter
-                <input type=checkbox name=P2_lead checked value=:Keith:>Keith
                 <input type=checkbox name=P2_lead checked value=:Yamamoto:>Yamamoto
+                <input type=checkbox name=P2_lead checked value=:GlavenusHunter:>GlavenusHunter
+                <input type=checkbox name=P2_lead checked value=:ACC:>ACC
+                <input type=checkbox name=P2_lead checked value=:Keith:>Keith
+                <input type=checkbox name=P2_lead checked value=:Ganesha:>Ganesha
             </div>
             Do you need 100% SBR?<input type=checkbox name=sbr value=sbr>
             <div id=preemptives>
@@ -105,21 +120,21 @@
     <div id="output">
         <div id="template">
             <span id=title>**__Guide # (Optional Description):__**</span> <br>
-            P1 lead: <span id=P1_lead>:ACC: :GlavenusHunter: :Keith: :Yamamoto: :Ganesha:</span> <br>
-            P2 lead: <span id=P2_lead>:ACC: :GlavenusHunter: :Keith: :Yamamoto: :Ganesha:</span> <br>
+            <span id=Line1_lead>P1 lead:</span>  <span id=P1_lead>:Yamamoto: :GlavenusHunter: :ACC: :Keith: :Ganesha:</span> <br>
+            <span id=Line2_lead>P2 lead:</span> <span id=P2_lead>:Yamamoto: :GlavenusHunter: :ACC: :Keith: :Ganesha:</span> <br>
             <span id="sbr"></span>
             <span id="zap"></span>
             <br>
             **Example Team**: <br>
             ```<br>
-            P1: <span id=P1_team>Lead(Inherit)/Sub(Inherit)/Sub(Inherit)/Sub(Inherit)/Sub(Inherit) - X SB</span><br>
-            P2: <span id=P2_team>Lead(Inherit)/Sub(Inherit)/Sub(Inherit)/Sub(Inherit)/Sub(Inherit) - X SB</span><br>
+            P1:<span id=P1_team>Lead(Inherit)/Sub(Inherit)/Sub(Inherit)/Sub(Inherit)/Sub(Inherit) - X SB</span><br>
+            P2:<span id=P2_team>Lead(Inherit)/Sub(Inherit)/Sub(Inherit)/Sub(Inherit)/Sub(Inherit) - X SB</span><br>
             ```<br>
             <br>
-            **__Notes__**<br>
+            **Notes**<br>
            <span id=note></span>
             <br>
-            **__Rundown:__**<br>
+            **Rundown:**<br>
             ```<br>
             <span id="rundown"></span>
             ```<br>

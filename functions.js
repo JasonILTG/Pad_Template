@@ -75,7 +75,18 @@ $( document ).ready(function() {
             $("#sbr").html(" ")
             );
     });
-
+    $(`input[name=Line1_lead]`).on("change",function () {
+       if(this.checked){
+        $("#Line1_lead").html($(this).val());
+       }
+    });
+    
+    $(`input[name=Line2_lead]`).on("change",function () {
+       if(this.checked){
+        $("#Line2_lead").html($(this).val());
+       }
+    });
+    
     $("#preemptives").on("change", "input ",function () {
         var preEmptiveFloors = [];
         var new_field = true;
@@ -83,10 +94,10 @@ $( document ).ready(function() {
             if ($(this).val().length === 0) {
                 new_field = false;
             }else{
-                preEmptiveFloors.push(":zap: FL: "+$(this).val()+"<br>");
+                preEmptiveFloors.push("F"+$(this).val());
             }
         });
-        $("#zap").html(preEmptiveFloors);
+        $("#zap").html(":zap: " + preEmptiveFloors.join(", "));
         if(new_field){
             $("#preemptives").append(`FL: <input type=number name=PreEmptive size="2" min="0" max="99"><br>`);
         }
