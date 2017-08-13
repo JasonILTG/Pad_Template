@@ -88,16 +88,16 @@ $( document ).ready(function() {
     });
     
     $("#preemptives").on("change", "input ",function () {
-        var preEmptiveFloors = [];
+        var preemptiveFloors = [];
         var new_field = true;
         $(`input[name=PreEmptive]`).each(function(){
             if ($(this).val().length === 0) {
                 new_field = false;
             }else{
-                preEmptiveFloors.push("F"+$(this).val());
+                preemptiveFloors.push("F"+$(this).val());
             }
         });
-        $("#zap").html(":zap: " + preEmptiveFloors.join(", "));
+        $("#zap").html(":zap: " + preemptiveFloors.join(", "));
         if(new_field){
             $("#preemptives").append(`FL: <input type=number name=PreEmptive size="2" min="0" max="99"><br>`);
         }
@@ -112,16 +112,16 @@ $( document ).ready(function() {
     });
     
     $("#notes").on("input", "input ",function () {
-        var preEmptiveFloors = [];
+        var preemptiveFloors = [];
         var new_field = true;
         $(`input[name=note]`).each(function(){
             if ($(this).val().length === 0) {
                 new_field = false;
             }else{
-                preEmptiveFloors.push("&#8226; "+$(this).val()+"<br>");
+                preemptiveFloors.push("&#8226; "+$(this).val()+"<br>");
             }
         });
-        $("#note").html(preEmptiveFloors);   
+        $("#note").html(preemptiveFloors);   
 
         if(new_field){
             $("#notes").append(`&#8226; <input type=text name=note><br>`);
